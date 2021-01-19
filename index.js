@@ -17,7 +17,8 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 18;
+console.log(votingAge >= 18);
 /*
 Task 1b - Values
 
@@ -28,6 +29,12 @@ Do the following:
 
    HINT: no function required
 */
+let variable_1 = 'var 1 init value',
+	variable_2 = 'Change variable_1';
+if (variable_2 === 'Change variable_1') {
+	variable_1 = 'var 1 changed value';
+}
+console.log(variable_1);
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -39,7 +46,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let ninetyNine = '1999';
+console.log(Number(ninetyNine));
 /*
 Task 1d - Multiply
 
@@ -63,9 +71,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/) {
-	/*add your code here*/
+function dogYears(age) {
+	return age * 7;
 }
+dogYears(9);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -94,9 +103,30 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */
 
-function hungryDog(/*add your code here*/) {
-	/*add your code here*/
+function hungryDog(weight, age) {
+	if (age >= 1) {
+		// adult
+		if (weight <= 5) {
+			return weight * 0.05;
+		} else if (weight >= 6 && weight <= 10) {
+			return weight * 0.04;
+		} else if (weight >= 11 && weight <= 15) {
+			return weight * 0.03;
+		} else {
+			return weight * 0.02;
+		}
+	} else {
+		// puppy
+		if (age >= 0.16667 && age <= 0.333333) {
+			return weight * 0.1;
+		} else if (age > 0.33333 && age <= 0.58333) {
+			return weight * 0.05;
+		} else if (age > 0.58333 && age < 1) {
+			return weight * 0.04;
+		}
+	}
 }
+hungryDog(15, 1);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -118,9 +148,34 @@ Use the game function below to do the following:
 
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+const choices = ['rock', 'paper', 'scissors'];
+const randomIndex = (Math.random() * 10) % 3;
+const computerChoice = choices[randomIndex];
 
 function game(user, computer) {
-	/*add your code here*/
+	const ROCK = 'rock';
+	const PAPER = 'paper';
+	const SCISSORS = 'scissors';
+
+	const WIN = 'you win!';
+	const LOSE = 'you lose!';
+	const TIE = "it's a tie";
+
+	if (user === ROCK) {
+		if (computer === ROCK) return TIE;
+		if (computer === PAPER) return LOSE;
+		if (computer === SCISSORS) return WIN;
+	} else if (user === PAPER) {
+		if (computer === ROCK) return WIN;
+		if (computer === PAPER) return TIE;
+		if (computer === SCISSORS) return LOSE;
+	} else if (user === SCISSORS) {
+		if (computer === ROCK) {
+			return LOSE;
+		}
+		if (computer === PAPER) return WIN;
+		if (computer === SCISSORS) return TIE;
+	}
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
