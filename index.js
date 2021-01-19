@@ -170,9 +170,7 @@ function game(user, computer) {
 		if (computer === PAPER) return TIE;
 		if (computer === SCISSORS) return LOSE;
 	} else if (user === SCISSORS) {
-		if (computer === ROCK) {
-			return LOSE;
-		}
+		if (computer === ROCK) return LOSE;
 		if (computer === PAPER) return WIN;
 		if (computer === SCISSORS) return TIE;
 	}
