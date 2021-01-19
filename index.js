@@ -264,7 +264,15 @@ Using the vowelCounter function below do the following:
 function vowelCounter(stringToCheck) {
 	let vowelCountTracker = 0;
 	let vowelArray = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+	stringToCheck.split('').forEach((charToCheck) => {
+		if (vowelArray.includes(charToCheck)) {
+			vowelCountTracker++;
+		}
+	});
+	return vowelCountTracker;
 }
+
+console.log('safe: ', vowelCounter('QuEuE'));
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo() {
