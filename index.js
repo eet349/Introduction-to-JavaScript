@@ -242,7 +242,7 @@ function grade(score) {
 	const B = 'you got a B';
 	const C = 'you got a C';
 	const D = 'you got a D';
-	const F = 'you got a F';
+	const F = 'you got an F';
 
 	if (score >= 90 && score <= 100) return A;
 	else if (score >= 80 && score <= 89) return B;
@@ -263,8 +263,9 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-function vowelCounter(/*add your code here*/) {
-	/*add your code here*/
+function vowelCounter(stringToCheck) {
+	let vowelCountTracker = 0;
+	let vowelArray = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 }
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
