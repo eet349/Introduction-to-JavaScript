@@ -185,12 +185,13 @@ function game(user, computer) {
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
-	/*add your code here*/
+function miles(kilometers) {
+	const kiloToMilesFactor = 0.621371;
+	return kilometers * kiloToMilesFactor;
 }
 
 //Task 5b - Feet to CM
@@ -201,8 +202,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/) {
-	/*add your code here*/
+function feet(centimeters) {
+	const centimetersToFeetFactor = 30.48;
+	return centimeters / centimetersToFeetFactor;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -213,10 +215,11 @@ Using the annoyingSong function below do the following:
   1. Receive a starting number and start the count down from the number received
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
-*/
-
-function annoyingSong(/*add your code here*/) {
-	/*add your code here*/
+      */
+function annoyingSong(timesToRepeatSong) {
+	while (timesToRepeatSong > 0) {
+		return `${timesToRepeatSong} bottles of soda on the wall, ${timesToRepeatSong} bottles of soda, take one down pass it around ${--timesToRepeatSong} bottles of soda on the wall`;
+	}
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -234,8 +237,18 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
 
-function grade(/*Your Code here */) {
-	/*Your Code here */
+function grade(score) {
+	const A = 'you got an A';
+	const B = 'you got a B';
+	const C = 'you got a C';
+	const D = 'you got a D';
+	const F = 'you got a F';
+
+	if (score >= 90 && score <= 100) return A;
+	else if (score >= 80 && score <= 89) return B;
+	else if (score >= 70 && score <= 79) return C;
+	else if (score >= 60 && score <= 69) return D;
+	else return F;
 }
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
